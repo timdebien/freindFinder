@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Survey</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Your new friend</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="friendname"></p>
+                    <img id="friendphoto" src="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-bottom: 21px;">
+        <h1>Answer the following questions to find a new friend!</h1>
+        <button id="home" class="btn btn-primary" type="submit" name="button">Home Page</button>
+        <form>
+            Your Name<input type="text" name="name" id="username">
+            Link to photo<input type="text" name="photo" id="photo">
+            <h3>I like snowboarding</h3>
+            <select id="q1" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <h3>I enjoy cold beers</h3>
+            <select id="q2" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <h3>I love hiking</h3>
+            <select id="q3" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <h3>I like video games</h3>
+            <select id="q4" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <h3>I love riding bikes</h3>
+            <select id="q5" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <h3>I love sunny days</h3>
+            <select id="q6" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <h3>I love rainy days</h3>
+            <select id="q7" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <h3>I am a happy person</h3>
+            <select id="q8" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <h3>I like sushi</h3>
+            <select id="q9" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <h3>i like to go on adventures</h3>
+            <select id="q10" name="">
+                <option value="1">Do not agree</option>
+                <option value="2">Mostly do not agree</option>
+                <option value="3">Sometimes agree and sometimes disagree</option>
+                <option value="4">Mostly agree</option>
+                <option value="5">Completely agree</option>
+            </select>
+            <button id="submit" class="btn btn-primary btn-lg btn-block" type="submit" name="button">Find Friend</button>
+        </form>
+
+        <hr>
+        <a href="/friends">API Friends List</a>
+        <p style="display: inline; margin: 10px;">|</p>
+        <a href="https://github.com/Wyatt-1996/friendfinder">Github Repo</a>
+        
+    </div>
+    <script>
+     
+        document.getElementById('submit').addEventListener('click', function (e) {
+            e.preventDefault()
+            var myValues = []
+            var frienddata = {}
+            frienddata.name = $("#username").val();
+            frienddata.photo = $("#photo").val();
+            myValues.push(parseInt(document.getElementById('q1').value))
+            myValues.push(parseInt(document.getElementById('q2').value))
+            myValues.push(parseInt(document.getElementById('q3').value))
+            myValues.push(parseInt(document.getElementById('q4').value))
+            myValues.push(parseInt(document.getElementById('q5').value))
+            myValues.push(parseInt(document.getElementById('q6').value))
+            myValues.push(parseInt(document.getElementById('q7').value))
+            myValues.push(parseInt(document.getElementById('q8').value))
+            myValues.push(parseInt(document.getElementById('q9').value))
+            myValues.push(parseInt(document.getElementById('q10').value))
+            frienddata.scores = myValues;
+            
+            console.log(frienddata);
+            
+            $.post("/api/tables", frienddata, function(data){
+                console.log(data);
+            $("#friendname").text(data.name);
+            $("#friendphoto").attr("src", data.photo);
+            $("#myModal").modal("toggle");
+                
+            });
+            
+      
+        })
+        document.getElementById('home').addEventListener('click', function () {
+            location.href = '.'
+        })
+    </script>
+    <style>
+        #submit {
+            display: block;
+            margin-top: 40px;
+        }
+    </style>
+</body>
+
+</html>
